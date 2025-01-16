@@ -1,0 +1,25 @@
+/* Apply to the entire body and html elements */
+html, body {
+    height: 100%; /* Ensure the body takes the full height of the screen */
+    margin: 0; /* Remove default margin */
+}
+
+/* The wrapper element for the page content */
+.page-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100%; /* Make sure the wrapper takes up at least 100% of the height */
+}
+
+/* This is the main content area */
+.main-content {
+    flex: 1; /* This will push the footer to the bottom if there's not enough content */
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

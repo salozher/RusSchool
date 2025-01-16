@@ -1,0 +1,96 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff0e6; /* Very light peach background */
+    color: #a57777; /* Dark brown/burgundy text */
+}
+
+header {
+    background-color: #e07a5f; /* Dark peach header background */
+    padding: 1rem 0;
+    color: white;
+}
+
+header a.nav-link {
+    color: white !important; /* Keep nav links white */
+}
+
+header a.nav-link:hover {
+    color: #f8f9fa !important; /* Lighter color on hover */
+}
+
+footer {
+    background-color: #e07a5f;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.main-content {
+    padding: 2rem 0;
+}
+
+.form-select {
+    width: auto; /* adjust the width as per needs */
+    display: inline-block;
+}
+
+
+.background-img {
+    background-image: url('/static/pushkin.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.background-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.background-img .content {
+    position: relative;
+    z-index: 1; /* Ensure content is on top of the overlay */
+    color: white;
+}
+
+.teachers-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 teachers per row on large screens */
+    gap: 20px; /* Adds space between each teacher card */
+    justify-items: center; /* Centers the content inside each grid item */
+}
+
+.teacher-card {
+    text-align: center; /* Centers the text inside the card */
+    max-width: 200px; /* Optional: Adjust the max width of the cards */
+}
+
+.rounded-photo {
+    border-radius: 40%;
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+/* Responsive design: 2 teachers per row on mobile devices */
+@media (max-width: 768px) {
+    .teachers-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 teachers per row */
+    }
+}
+
+/* Even smaller screens: 1 teacher per row on very small devices */
+@media (max-width: 480px) {
+    .teachers-container {
+        grid-template-columns: 1fr; /* 1 teacher per row */
+    }
+}

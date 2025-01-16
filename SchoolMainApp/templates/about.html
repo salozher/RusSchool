@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Русская школа в Маастрихте</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+</head>
+<body>
+<div class="container">
+    <div class="background-img"></div>
+    <div class="content">
+        <!--        <h1>{% trans "Latest News" %}</h1>-->
+        <h2>{{ page_item.title }}</h2>
+        <p>{{ page_item.content }}</p>
+    </div>
+</div>
+<div class="background-img">HJGJHGJHGJGJHGJHGJHGJHGJHGJHGJHGJBNMBJM</div>
+</body>
+{% endblock content %}

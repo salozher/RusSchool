@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="teachers-container">
+            {% for teacher in teachers %}
+                <div class="teacher-card">
+                    {% if teacher.photo %}
+                        <img src="{{ teacher.photo.url }}" alt="Teacher Photo" class="rounded-photo">
+                    {% endif %}
+                    <p>{{ teacher }}</p>
+                    <p>{% trans "Teacher of" %}</p>
+                    <ul>
+                        {% for subject in teacher.subjects.all %}
+                            <li>{{ subject.title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
