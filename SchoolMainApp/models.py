@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Page(models.Model):
     purpose = models.CharField(max_length=100, default="General")
     title = models.CharField(max_length=200)
@@ -40,15 +41,3 @@ class Teacher(models.Model):
 
 
 
-class RegistrationInfo(models.Model):
-    email = models.CharField(max_length=255)
-    name = models.CharField(max_length=255)
-    phoneNumber = models.CharField(max_length=20)
-    childFirstName = models.CharField(max_length=50)
-    childLastName = models.CharField(max_length=50)
-    childAge = models.IntegerField()
-
-    SUBJECT_CHOICES = [('rusLang', 'Русский язык'), ('paint', 'Рисование'), ('bookClub', 'Книжный клуб'), ('hist', 'История'), ('mus', 'Музыка'), ('musArt', 'Музыкально-Театральная Студия'), ('chess', 'Шахматы'), ('prog', 'Программирование'), ]
-
-    def __str__(self) -> str:
-        return self.email

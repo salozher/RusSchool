@@ -36,6 +36,22 @@
                             </select>
                         </form>
                     </li>
+                     {% if user.is_authenticated %}
+                         <li class="nav-item">
+                              <a class="nav-link" href="{% url 'logout' %}">
+                                <i class="fas fa-sign-out-alt"></i>
+                                 {% trans "Logout" %}
+                                 </a>
+                          </li>
+
+                     {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">
+                            <i class="fas fa-sign-in-alt"></i>
+                                {% trans "Login" %}
+                            </a>
+                        </li>
+                     {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="/about">
                             <ion-icon name="information-circle-outline"></ion-icon>

@@ -1,21 +1,21 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #fff0e6; /* Very light peach background */
-    color: #a57777; /* Dark brown/burgundy text */
+    background-color: #fff0e6;
+    color: #a57777;
 }
 
 header {
-    background-color: #e07a5f; /* Dark peach header background */
+    background-color: #e07a5f;
     padding: 1rem 0;
     color: white;
 }
 
 header a.nav-link {
-    color: white !important; /* Keep nav links white */
+    color: white !important;
 }
 
 header a.nav-link:hover {
-    color: #f8f9fa !important; /* Lighter color on hover */
+    color: #f8f9fa !important;
 }
 
 footer {
@@ -30,16 +30,15 @@ footer {
 }
 
 .form-select {
-    width: auto; /* adjust the width as per needs */
+    width: auto;
     display: inline-block;
 }
 
-
 .background-img {
-    background-image: url('/static/pushkin.jpg'); /* Replace with your image path */
+    background-image: url('/static/pushkin.jpg');
     background-size: cover;
     background-position: center;
-    height: 400px; /* Adjust height as needed */
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,44 +52,121 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .background-img .content {
     position: relative;
-    z-index: 1; /* Ensure content is on top of the overlay */
+    z-index: 1;
     color: white;
 }
 
 .teachers-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 teachers per row on large screens */
-    gap: 20px; /* Adds space between each teacher card */
-    justify-items: center; /* Centers the content inside each grid item */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 20px auto;
+    gap: 20px;
 }
 
 .teacher-card {
-    text-align: center; /* Centers the text inside the card */
-    max-width: 200px; /* Optional: Adjust the max width of the cards */
+    background-color: #dfdfdf; /* Light gray background for the card */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 320px;
+    position: relative;
+    padding-top: 50px; /* Space for the photo and for proper layout */
 }
 
 .rounded-photo {
     border-radius: 40%;
-    width: 150px; /* Adjust as needed */
-    height: 150px; /* Adjust as needed */
+    width: 150px;
+    height: 150px;
     object-fit: cover;
+    position: absolute;
+    top: -25px;  /* Adjust top value as needed*/
+    left: 15px;
+}
+
+.teacher-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 170px; /* Space for the image to be shown */
+}
+
+.teacher-info li {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.subject-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+    color: #6c5d5d;
+    text-align: left;
+    margin-top: 20px;/* Move subjects down */
+}
+
+.subject-info li {
+    margin-bottom: 2px;
 }
 
 /* Responsive design: 2 teachers per row on mobile devices */
 @media (max-width: 768px) {
     .teachers-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 teachers per row */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 20px auto;
+        gap: 20px;
+    }
+    .teacher-card{
+        max-width: 48%;
+        align-items: flex-start;
+        padding-top: 120px;
+    }
+    .rounded-photo {
+       top: 15px;
+        left: 15px;
+     }
+
+    .teacher-info{
+        margin-left: 170px;
+    }
+      .subject-info {
+        margin-top: 150px;
     }
 }
 
 /* Even smaller screens: 1 teacher per row on very small devices */
 @media (max-width: 480px) {
-    .teachers-container {
-        grid-template-columns: 1fr; /* 1 teacher per row */
+   .teachers-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .teacher-card{
+        max-width: 100%;
+        padding-top: 100px;
+    }
+
+    .rounded-photo {
+        top: 15px;
+        left: 15px;
+    }
+
+    .teacher-info{
+        margin-left: 170px;
+    }
+     .subject-info {
+        margin-top: 150px;
     }
 }

@@ -2,16 +2,18 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-    <div class="container">
+     <div class="container">
         <div class="teachers-container">
             {% for teacher in teachers %}
                 <div class="teacher-card">
                     {% if teacher.photo %}
                         <img src="{{ teacher.photo.url }}" alt="Teacher Photo" class="rounded-photo">
                     {% endif %}
-                    <p>{{ teacher }}</p>
-                    <p>{% trans "Teacher of" %}</p>
-                    <ul>
+                    <ul class="teacher-info">
+                        <li>{{ teacher.first_name }} {{ teacher.middle_name }}</li>
+                        <li>{{ teacher.last_name }}</li>
+                   </ul>
+                    <ul class="subject-info">
                         {% for subject in teacher.subjects.all %}
                             <li>{{ subject.title }}</li>
                         {% endfor %}
