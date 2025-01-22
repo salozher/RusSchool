@@ -64,14 +64,13 @@ footer {
 .teachers-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between; /* Changed to space-between */
     margin: 20px auto;
     gap: 20px;
 }
 
 .teacher-card {
-    background-color: #dfdfdf; /* Light gray background for the card */
-    padding: 10px;
+    background-color: #dfdfdf;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -79,7 +78,8 @@ footer {
     align-items: flex-start;
     max-width: 320px;
     position: relative;
-    padding-top: 50px; /* Space for the photo and for proper layout */
+    padding: 50px 10px 10px;
+    margin-bottom: 15px;
 }
 
 .rounded-photo {
@@ -88,15 +88,14 @@ footer {
     height: 150px;
     object-fit: cover;
     position: absolute;
-    top: -25px;  /* Adjust top value as needed*/
+    top: -25px;
     left: 15px;
 }
 
 .teacher-info {
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-left: 170px; /* Space for the image to be shown */
+    margin: 0 0 0 170px;
 }
 
 .teacher-info li {
@@ -109,11 +108,10 @@ footer {
 .subject-info {
     list-style: none;
     padding: 0;
-    margin: 0;
     font-size: 0.9em;
     color: #6c5d5d;
     text-align: left;
-    margin-top: 20px;/* Move subjects down */
+    margin: 20px 0 0;
 }
 
 .subject-info li {
@@ -125,37 +123,15 @@ footer {
     .teachers-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between; /* Changed to space-between here too */
         margin: 20px auto;
         gap: 20px;
     }
-    .teacher-card{
+
+    .teacher-card {
         max-width: 48%;
         align-items: flex-start;
         padding-top: 120px;
-    }
-    .rounded-photo {
-       top: 15px;
-        left: 15px;
-     }
-
-    .teacher-info{
-        margin-left: 170px;
-    }
-      .subject-info {
-        margin-top: 150px;
-    }
-}
-
-/* Even smaller screens: 1 teacher per row on very small devices */
-@media (max-width: 480px) {
-   .teachers-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .teacher-card{
-        max-width: 100%;
-        padding-top: 100px;
     }
 
     .rounded-photo {
@@ -163,10 +139,21 @@ footer {
         left: 15px;
     }
 
-    .teacher-info{
+    .teacher-info {
         margin-left: 170px;
     }
-     .subject-info {
+
+    .subject-info {
         margin-top: 150px;
     }
+}
+
+.logo-img {
+    max-height: 50px; /* Adjust the max-height of the logo */
+    margin-right: 10px; /* Adjust the spacing between the logo and title */
+}
+
+.logo-link {
+    text-decoration: none;
+    color: white;
 }
