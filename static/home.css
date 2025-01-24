@@ -1,13 +1,21 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fff0e6;
-    color: #a57777;
+    color: #332423;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: #e07a5f;
     padding: 1rem 0;
     color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 header a.nav-link {
@@ -18,20 +26,33 @@ header a.nav-link:hover {
     color: #f8f9fa !important;
 }
 
+.main-content {
+    flex: 1;
+    padding: calc(1rem + 80px) 0 2rem; /* Dynamic padding */
+}
+
 footer {
     background-color: #e07a5f;
     color: white;
     text-align: center;
     padding: 1rem 0;
-}
-
-.main-content {
-    padding: 2rem 0;
+    margin-top: auto;
+    z-index: 1000;
 }
 
 .form-select {
     width: auto;
     display: inline-block;
+}
+
+.logo-img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: white;
 }
 
 .background-img {
@@ -64,7 +85,7 @@ footer {
 .teachers-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Changed to space-between */
+    justify-content: space-between;
     margin: 20px auto;
     gap: 20px;
 }
@@ -123,7 +144,7 @@ footer {
     .teachers-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between; /* Changed to space-between here too */
+        justify-content: space-between;
         margin: 20px auto;
         gap: 20px;
     }
@@ -146,14 +167,4 @@ footer {
     .subject-info {
         margin-top: 150px;
     }
-}
-
-.logo-img {
-    max-height: 50px; /* Adjust the max-height of the logo */
-    margin-right: 10px; /* Adjust the spacing between the logo and title */
-}
-
-.logo-link {
-    text-decoration: none;
-    color: white;
 }

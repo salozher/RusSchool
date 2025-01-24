@@ -14,6 +14,53 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <style>
+        body {
+          font-family: 'Montserrat', sans-serif;
+          background-color: #fff0e6;
+          color: #332423;
+          min-height: 100vh; /* Ensure body covers at least the entire viewport height */
+          display: flex;
+          flex-direction: column; /* Layout children in a column */
+        }
+        header {
+          background-color: #e07a5f;
+          padding: 1rem 0;
+          color: white;
+          position: fixed;  /* Make header fixed */
+          top: 0;   /* Stick to top */
+          left: 0;
+          right: 0; /* Stretch across the page */
+           z-index: 1000;
+        }
+        header a.nav-link {
+          color: white !important;
+        }
+         header a.nav-link:hover {
+          color: #f8f9fa !important;
+        }
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+           padding-top: 80px; /* Add padding to avoid content overlaping with header*/
+        }
+        footer {
+          background-color: #e07a5f;
+          color: white;
+          text-align: center;
+          padding: 1rem 0;
+          margin-top: auto;
+          z-index: 1000;
+        }
+        .form-select {
+          width: auto;
+          display: inline-block;
+        }
+        .logo-img {
+            max-height: 50px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -21,7 +68,7 @@
         <div class="row align-items-center">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="{% url 'home' %}" class="logo-link">
-                     <img src="{% static 'logo2.svg' %}" alt="Logo" class="logo-img">
+                     <img src="{% static 'kids-logo.jpg' %}" alt="Logo" class="logo-img">
                 </a>
                 <h2>{% trans "RusMaastricht KIDS" %}</h2>
             </div>
@@ -93,6 +140,24 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function adjustMainContentPadding() {
+            const header = document.querySelector('header');
+            const mainContent = document.querySelector('.main-content');
+            if (header && mainContent) {
+                const headerHeight = header.offsetHeight;
+                 mainContent.style.paddingTop = `${headerHeight}px`;
+            }
+        }
+
+        adjustMainContentPadding();
+        window.addEventListener('resize', adjustMainContentPadding);
+    });
+</script>
+
 {% block extra_scripts %}{% endblock %}
 </body>
 </html>
