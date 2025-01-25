@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Page(models.Model):
     purpose = models.CharField(max_length=100, default="General")
     title = models.CharField(max_length=200)
@@ -8,6 +7,13 @@ class Page(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class AgeGroup(models.Model):
+    id = models.AutoField(primary_key=True)
+    age_definition = models.CharField(max_length=255)
+
+    def __str__(self) -> str:
+        return self.age_definition
 
 class News(models.Model):
     title = models.CharField(max_length=255)
@@ -21,10 +27,11 @@ class Subject(models.Model):
     title = models.CharField(max_length=255)
     short_description = models.CharField(max_length=255, default="")
     long_description = models.TextField(default="")
+    age_group = models.ManyToManyField(AgeGroup)
+    photo = models.ImageField(upload_to='subjects_photos/', blank=True, null=True)
 
     def __str__(self) -> str:
         return self.title
-
 
 class Teacher(models.Model):
     id = models.AutoField(primary_key=True)
@@ -38,6 +45,3 @@ class Teacher(models.Model):
 
     def __str__(self) -> str:
         return self.first_name + " " + self.middle_name + " " + self.last_name
-
-
-

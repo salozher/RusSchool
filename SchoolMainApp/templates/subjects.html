@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid">
+        {% for subject in subjects %}
+            <div class="subject-container">
+                <div class="subject-card">
+                    <div class="subject-content">
+                        {% if subject.photo %}
+                            <img src="{{ subject.photo.url }}" alt="Subject Photo" class="subject-photo">
+                        {% endif %}
+                         <div class="subject-details">
+                            <h2 class="subject-title">{{ subject.title }}</h2>
+                            <ul class="age-group-info">
+                                {% for age_group in subject.age_group.all %}
+                                    <li>{{ age_group.age_definition }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                   <p class="subject-short-description">{{ subject.short_description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

@@ -3,9 +3,9 @@
   <path d="M 60,10 A 50,50 0 1,1 59.99,10" fill="#f0f0f0"/>
 
   <!-- "RM" text as a polygon (approximated using path data) -->
-  <path d="M 40 40 L 40 20 100 20 z" fill="#e07a5f"/>
+  <path d="M 40 40 L 40 20 100 20  33  14 z" fill="#e07a5f"/>
 
-     <path d="M 20 20 L 180 20" stroke="blue" stroke-width="7" />
+     <path d="M 20 20 L 120 50" stroke="blue" stroke-width="7" />
 
      <path d="M 0 200 C 10 10, 20 10, 50 200" stroke="red" fill="transparent" stroke-width="2"/>
      <path d="M 30 150 Q 10 50, 90 10" stroke="red" fill="transparent" stroke-width="3"/>

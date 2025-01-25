@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from SchoolMainApp.views import (home_view, team_view, about_view, contact_view, news_view,)
+from SchoolMainApp.views import (home_view, team_view, about_view, contact_view, news_view, subjects_view,)
 
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
@@ -13,4 +13,5 @@ urlpatterns = [
     path('contact/', contact_view, name='contact'),
     path('contact/success/', contact_view, name='success'),
     path('news/', news_view, name='news'),
+    path('subjects/', subjects_view, name='subjects'),
 ]

@@ -10,7 +10,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 from SchoolMainApp.forms import Contact
 
-from .models import Page, Teacher
+from .models import Page, Teacher, Subject
 
 # Create your views here.
 def home_view(request):
@@ -72,6 +72,10 @@ def news_view(request):
     context = {'teachers': teachers, 'lang': lang, }
     # returns render(request, template of certain product or element, context dictionary)
     return render(request, 'news.html', context)
+
+def subjects_view(request):
+    subjects = Subject.objects.all()
+    return render(request, 'subjects.html', {'subjects': subjects})
 
 def set_language(request):
     if request.method == "POST":

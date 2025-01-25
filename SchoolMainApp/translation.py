@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Page, News, Teacher, Subject
+from .models import Page, News, Teacher, Subject, AgeGroup
 
 @register(Page)
 class PageTranslationOptions(TranslationOptions):
@@ -16,3 +16,7 @@ class TeacherTranslationOptions(TranslationOptions):
 @register(Subject)
 class SubjectTranslationOptions(TranslationOptions):
     fields = ('title', 'short_description', 'long_description')
+
+@register(AgeGroup)
+class AgeGroupTranslationOptions(TranslationOptions):
+    fields = ('age_definition',)

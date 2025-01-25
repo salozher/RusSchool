@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import Page, News, Teacher, Subject
+from .models import Page, News, Teacher, Subject, AgeGroup
 
 @admin.register(Page)
 class PageAdmin(TranslationAdmin):
@@ -12,6 +12,10 @@ class NewsAdmin(TranslationAdmin):
 
 @admin.register(Subject)
 class SubjectAdmin(TranslationAdmin):
+    pass
+
+@admin.register(AgeGroup)
+class AgeGroupAdmin(TranslationAdmin):
     pass
 
 @admin.register(Teacher)
