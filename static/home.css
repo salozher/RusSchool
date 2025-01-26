@@ -8,15 +8,16 @@ body {
 }
 
 header {
-    background-color: #e07a5f;
+    background-color: rgba(224, 122, 95, 0.87);
     padding: 1rem 0;
     color: white;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 1000;
 }
+
 .dropdown-menu {
     z-index: 8;
 }
@@ -31,18 +32,18 @@ header a.nav-link:hover {
 
 .main-content {
     flex: 1;
-    padding: 2rem 0;
-    padding-top: 80px;
+    padding: 0 0 0 0 ;
 }
 
 footer {
     background-color: #e07a5f;
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1px 0;
     margin-top: auto;
     z-index: 1000;
 }
+
 
 .form-select {
     width: auto;
@@ -90,7 +91,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 20px auto;
+    margin: 30px auto;
     gap: 20px;
 }
 
@@ -120,7 +121,7 @@ footer {
 .teacher-info {
     list-style: none;
     padding: 0;
-    margin: 0 0 0 170px;
+    margin: 40px 0 0 170px;
 }
 
 .teacher-info li {
@@ -154,9 +155,9 @@ footer {
     }
 
     .teacher-card {
-        max-width: 48%;
+        max-width: 66%;
         align-items: flex-start;
-        padding-top: 120px;
+        padding-top: 128px;
     }
 
     .rounded-photo {
@@ -209,7 +210,7 @@ footer {
 }
 
 .subject-photo {
-    width: 300px;
+     width: 300px;
     max-width: 200px;
     height: auto;
     object-fit: cover;
